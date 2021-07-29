@@ -101,7 +101,11 @@ export const apis: AnyApiFactory[] = [
   /*
   ...
   */
-  createApiFactory(techRadarApiRef, new MyOwnClient()),
+  createApiFactory({
+    api: techRadarApiRef,
+    deps: {},
+    factory: () => new MyOwnClient(),
+  }),
 ];
 ```
 
